@@ -4,7 +4,9 @@ import Icon from "react-native-vector-icons/FontAwesome5";
 import { getPokemonsDetailApi } from "../api/pokemon";
 import Header from "../components/Pokemon/Header";
 import Type from "../components/Pokemon/Type";
-import Stats from "../components/Stats";
+import Stats from "../components/Pokemon/Stats";
+import Favorite from "../components/Pokemon/Favorite";
+import useAuth from "../hooks/useAuth";
 
 export default function Pokemon(props) {
   const {
@@ -15,10 +17,13 @@ export default function Pokemon(props) {
 
   const [pokemon, setPokemon] = useState(null);
 
+  //para mostrar icon favorite solo para user logueado
+  const { auth } = useAuth();
+
   //setOptions: permite modificar el header de un Stack.Screen
   useEffect(() => {
     navigation.setOptions({
-      headerRight: () => null,
+      headerRight: () => (auth ? <Favorite id={pokemon?.id} /> : null),
       headerLeft: () => (
         <Icon
           name="arrow-left"
@@ -29,7 +34,7 @@ export default function Pokemon(props) {
         />
       ),
     });
-  }, [navigation, params]);
+  }, [navigation, params, pokemon, auth]);
 
   useEffect(() => {
     (async () => {

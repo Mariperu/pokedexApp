@@ -1,5 +1,8 @@
 export const API_HOST = "https://pokeapi.co/api/v2/";
 
+//nombre de key para usar en almacenamiento local con AsyncStorage
+export const FAVORITE_STORAGE = "Favorites";
+
 export const POKEMON_TYPE_COLORS = {
   normal: "#A8A878",
   fighting: "#C03028",
