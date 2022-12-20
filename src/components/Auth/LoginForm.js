@@ -7,7 +7,7 @@ import {
   Button,
   Keyboard,
 } from "react-native";
-import { useFormik } from "formik"; //maneja formularios
+import { useFormik } from "formik"; //maneja estado de formularios
 import * as Yup from "yup"; //valida campos de formularios
 import { user, userDetails } from "../../utils/userDB";
 import useAuth from "../../hooks/useAuth";

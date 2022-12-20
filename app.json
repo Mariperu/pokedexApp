@@ -21,7 +21,7 @@
       "supportsTablet": true
     },
     "android": {
-      "package": "com.abc.pokedex",
+      "package": "com.expo.mariperu.pokedex",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
